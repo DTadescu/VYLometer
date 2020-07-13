@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/routes"
+    app:startDestination="@id/monitorFragment">
+
+    <fragment
+        android:id="@+id/monitorFragment"
+        android:name="shdv.iotdev.vylometer.fragments.monitorFragment"
+        android:label="Monitor"
+        tools:layout="@layout/fragment_monitor" >
+        <action
+            android:id="@+id/action_monitorFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="shdv.iotdev.vylometer.fragments.settingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_statisticFragment"
+            app:destination="@id/statisticFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/statisticFragment"
+        android:name="shdv.iotdev.vylometer.fragments.statisticFragment"
+        android:label="Statistic"
+        tools:layout="@layout/fragment_statistic" />
+</navigation>
