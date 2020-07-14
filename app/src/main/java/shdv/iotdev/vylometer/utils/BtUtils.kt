@@ -38,7 +38,7 @@ object BtUtils {
         }
     }
 
-    private fun connected() = this::btSocket.isInitialized && btSocket.isConnected
+    fun connected() = this::btSocket.isInitialized && btSocket.isConnected
 
     fun enabled() = btAdapter != null && btAdapter.isEnabled
 
@@ -168,5 +168,13 @@ object BtUtils {
         }
     }
 
+    fun disconnect() {
+        try {
+            btSocket.close()
+        } catch (ec: IOException) {
+            Log.d("CONNECTTHREAD", "Could not close connection: $ec")
+            return
+        }
+    }
 
 }
